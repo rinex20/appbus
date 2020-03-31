@@ -1,9 +1,10 @@
 #!/bin/sh
 
-wget -O appbus.zip https://raw.githubusercontent.com/datagnss/appbus/master/raw/appbus.zip 
-unzip appbus.zip -d /data/wwwroot/default
+#wget -O appbus.zip https://raw.githubusercontent.com/datagnss/appbus/master/raw/appbus.zip 
+#unzip appbus.zip -d /data/wwwroot/default
 
-cd /data/wwwroot/default
+#cd /data/wwwroot/default
+
 mv /data/wwwroot/default/Install/apktool /usr/bin
 chmod 0755 /usr/bin/apktool
 mv /data/wwwroot/default/Install/apktool.jar /usr/bin
