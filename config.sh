@@ -27,6 +27,7 @@ sed -i '$a post_max_size = 128m' /usr/local/php/etc/php.ini
 
 
 echo "Create config file for appbus nginx"
+touch /etc/nginx/conf.d/appbus-8081.conf
 cat>/etc/nginx/conf.d/appbus-8081.conf<<EOF
 >"listen 8081;"
 >"server_name localhost;"
