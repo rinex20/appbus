@@ -1,10 +1,10 @@
 #!/bin/sh
 
-chown -R www:www /data/wwwroot/default/ && \
-chown -R www:www /data/wwwroot/default/upload 
+chown -R www:www /data/wwwroot/default\
+  && chown -R www:www /data/wwwroot/default/upload 
 
-chmod -R 0755 /data/wwwroot/default/ && \
-chmod -R 0755 /data/wwwroot/default/upload
+chmod -R 0755 /data/wwwroot/default\
+  && chmod -R 0755 /data/wwwroot/default/upload
 
 # delete exec in the line which contain disable_functions
 echo "config php options(remove exec security, modify upload fileszie)"
