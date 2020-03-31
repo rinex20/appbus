@@ -1,9 +1,16 @@
 #!/bin/sh
 
-chown -R www:www /data/wwwroot/default\
+wget -O appbus.zip https://raw.githubusercontent.com/datagnss/appbus/master/raw/appbus.zip \
+  && unzip appbus.zip -d /data/wwwroot/default \
+  && cd /data/wwwroot/default/ \
+  && mv /data/wwwroot/default/Install/apktool /usr/bin && chmod 0755 /usr/bin/apktool \ 
+  && mv /data/wwwroot/default/Install/apktool.jar /usr/bin && chmod 0755 /usr/bin/apktool.jar \
+  && mv /data/wwwroot/default/Install/aapt /usr/bin && chmod 0755 /usr/bin/aapt
+
+chown -R www:www /data/wwwroot/default \
   && chown -R www:www /data/wwwroot/default/upload 
 
-chmod -R 0755 /data/wwwroot/default\
+chmod -R 0755 /data/wwwroot/default \
   && chmod -R 0755 /data/wwwroot/default/upload
 
 # delete exec in the line which contain disable_functions
