@@ -6,6 +6,7 @@ ENV ver=0.9
 WORKDIR /root
 COPY oneinstack.sh /root
 COPY config.sh /root
+COPY appbus.zip /root
 
 RUN set -ex \ 
   && apt-get update && apt-get install -y wget \
