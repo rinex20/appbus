@@ -7,6 +7,4 @@ WORKDIR /root
 COPY config.sh /root
 RUN chmod +x config.sh && ./config.sh
 
-
-VOLUME /etc/nginx/conf.d
 EXPOSE 8081
