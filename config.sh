@@ -28,3 +28,4 @@ cat>/etc/nginx/conf.d/appbus-8081.conf<<EOF
 >"server_name localhost;"
 >EOF
 
+service nginx restart
