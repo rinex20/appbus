@@ -26,17 +26,4 @@ sed -n '/post_max_size/p' /usr/local/php/etc/php.ini | sed 's/post_max_size/#pos
 sed -i '$a upload_max_filesize = 128m' /usr/local/php/etc/php.ini
 sed -i '$a post_max_size = 128m' /usr/local/php/etc/php.ini
 
-
-echo "Create config file for appbus nginx"
-mkdir /etc/nginx/conf.d
-
-touch /etc/nginx/conf.d/appbus-8081.conf
-
-cat>/etc/nginx/conf.d/appbus-8081.conf<<EOF
->"listen 8081;"
->"server_name localhost;"
->EOF
-
-service nginx restart
-
 echo "appbus configure finished."
