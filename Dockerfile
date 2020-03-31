@@ -8,6 +8,7 @@ COPY oneinstack.sh /root
 COPY config.sh /root
 
 RUN set -ex \ 
+  && apt-get update && apt-get install -y wget \
   && chmod +x /root/oneinstack.sh && /root/oneinstack.sh \
   && chmod +x /root/config.sh && /root/config.sh \
 
