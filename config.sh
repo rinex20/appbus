@@ -23,3 +23,11 @@ chown -R www:www /data/wwwroot/default/upload
 
 chmod -R 0755 /data/wwwroot/default/ && \
 chmod -R 0755 /data/wwwroot/default/upload
+
+echo "Create config file for appbus nginx"
+cat>/etc/nginx/conf.d/appbus-8081.conf<<EOF
+>"listen 8081;"
+>"server_name localhost;"
+>EOF
+
+service nginx restart
