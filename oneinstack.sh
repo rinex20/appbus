@@ -13,13 +13,15 @@ echo "Download file: ${ONE_FILE} completed"
 
 tar xzf /root/oneinstack-full.tar.gz  
 
-cd /root/oneinstack
-chmod +x install.sh && ./install.sh \
+chmod +x /root/oneinstack/install.sh \
+  && /root/oneinstack/install.sh \
  --nginx_option 1 --php_option 5 \
- --phpcache_option 1 --phpmyadmin  --db_option 3 \
- --dbinstallmethod 1 --dbrootpwd v4RdF92cn
+ --phpcache_option 1 --phpmyadmin \
+ --db_option 3 --dbinstallmethod 1 \
+ --dbrootpwd v4RdF92cn
 
 echo "finish oneinstack installation."
-echo "remove oneinstack file."
+echo "remove oneinstack files."
 rm -f ${WWWROOT}/index.html
 rm -f ${ONE_FILE}
+rm -R /root/oneinstack
