@@ -4,7 +4,7 @@ LABEL maintainer="Jacky <cheungyong@gmail.com>"
 ENV ver=0.91
 
 WORKDIR /root
-ADD * /root
+ADD * /root/
 
 #&& unzip appbus.zip -d /data/wwwroot/default \
 RUN set -ex \   
