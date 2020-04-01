@@ -25,3 +25,8 @@ echo "remove oneinstack files."
 rm -f ${WWWROOT}/index.html
 rm -f ${ONE_FILE}
 rm -R /root/oneinstack
+
+echo "update rc.d for nginx mysql php"
+update-rc.d php-fpm defaults
+update-rc.d mysqld defaults
+update-rc.d nginx defaults
