@@ -6,14 +6,14 @@ ENV ver=0.91
 WORKDIR /root
 ADD * /root
 
-#
+#&& unzip appbus.zip -d /data/wwwroot/default \
 RUN set -ex \   
   && apt-get update && apt-get install -y wget \
-  && chmod +x /root/oneinstack.sh && /root/oneinstack.sh \
-  && unzip appbus.zip -d /data/wwwroot/default \
+  && chmod +x /root/oneinstack.sh && /root/oneinstack.sh \  
   && chmod +x /root/config.sh && /root/config.sh \
-  && chmod +x /root/start.sh
+  && chmod +x /root/start.sh \
+  && rm -f /root/*
 
 EXPOSE 80
-#VOLUME /etc/nginx/conf.d
-ENTRYPOINT ["/root/start.sh && bash"]
+VOLUME ["/data/wwwroot/default"]
+ENTRYPOINT ["/root/start.sh"]
