@@ -2,16 +2,12 @@
 
 PHP_INI="/usr/local/php/etc/php.ini"
 N_CONF="/usr/local/nginx/conf/nginx.conf"
-#wget -O appbus.zip https://raw.githubusercontent.com/datagnss/appbus/master/raw/appbus.zip 
-#unzip appbus.zip -d /data/wwwroot/default
 
-#cd /data/wwwroot/default
-
-mv /data/wwwroot/default/Install/apktool /usr/bin
+mv /root/apktool /usr/bin
 chmod 0755 /usr/bin/apktool
-mv /data/wwwroot/default/Install/apktool.jar /usr/bin
+mv /root/apktool.jar /usr/bin
 chmod 0755 /usr/bin/apktool.jar
-mv /data/wwwroot/default/Install/aapt /usr/bin 
+mv /root/aapt /usr/bin 
 chmod 0755 /usr/bin/aapt
 
 chown -R www:www /data/wwwroot/default
