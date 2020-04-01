@@ -15,6 +15,6 @@ RUN set -ex \
   && unzip appbus.zip -d /data/wwwroot/default \
   && chmod +x /root/config.sh && /root/config.sh
 
-EXPOSE 8081
-VOLUME /etc/nginx/conf.d
+EXPOSE 80
+#VOLUME /etc/nginx/conf.d
 ENTRYPOINT ["bash"]
