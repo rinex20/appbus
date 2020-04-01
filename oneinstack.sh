@@ -2,9 +2,10 @@
 
 # Download binary file
 ONE_FILE="oneinstack-full.tar.gz"
+WWWROOT="/data/wwwroot/default"
 
 echo "downloading oneinstack..."
-wget -O /root/oneinstack-full.tar.gz http://mirrors.linuxeye.com/${ONE_FILE} > /dev/null 2>&1  
+wget -O /root/${ONE_FILE} http://mirrors.linuxeye.com/${ONE_FILE} > /dev/null 2>&1  
 if [ $? -ne 0 ]; then
     echo "Error: Failed to download file: ${ONE_FILE}" && exit 1
 fi
@@ -20,4 +21,5 @@ chmod +x install.sh && ./install.sh \
 
 echo "finish oneinstack installation."
 echo "remove oneinstack file."
+rm -f ${WWWROOT}/index.html
 rm -f ${ONE_FILE}
