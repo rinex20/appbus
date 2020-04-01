@@ -17,4 +17,5 @@ RUN set -ex \
 
 EXPOSE 80
 VOLUME ["/data/wwwroot/default"]
-ENTRYPOINT ["/root/start.sh"]
+#ENTRYPOINT ["/root/start.sh"]
+CMD ["/root/start.sh"]
