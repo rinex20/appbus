@@ -13,8 +13,10 @@ RUN set -ex \
   && chmod +x /root/oneinstack.sh && /root/oneinstack.sh \  
   && chmod +x /root/config.sh && /root/config.sh \
   && chmod +x /root/start.sh \
-  && rm -f /root/*
+  && rm -rf /root/*
 
+# 环境变量
+ENV PATH $PATH:/usr/local/php/bin:/usr/local/php/sbin:/usr/local/nginx/sbin
 EXPOSE 80
 VOLUME ["/data/wwwroot/default"]
 #ENTRYPOINT ["/root/start.sh"]
