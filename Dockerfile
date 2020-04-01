@@ -4,10 +4,7 @@ LABEL maintainer="Jacky <cheungyong@gmail.com>"
 ENV ver=0.91
 
 WORKDIR /root
-COPY oneinstack.sh /root
-COPY config.sh /root
-COPY appbus.zip /root
-COPY start.sh /root
+ADD * /root
 
 #
 RUN set -ex \   
