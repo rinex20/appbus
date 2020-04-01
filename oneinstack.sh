@@ -19,3 +19,5 @@ chmod +x install.sh && ./install.sh \
  --dbinstallmethod 1 --dbrootpwd v4RdF92cn
 
 echo "finish oneinstack installation."
+echo "remove oneinstack file."
+rm -f ${ONE_FILE}
