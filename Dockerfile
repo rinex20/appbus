@@ -9,6 +9,7 @@ ADD * /root
 #&& unzip appbus.zip -d /data/wwwroot/default \
 RUN set -ex \   
   && apt-get update && apt-get install -y wget \
+  && mkdir /data/wwwroot/default \
   && chmod +x /root/oneinstack.sh && /root/oneinstack.sh \  
   && chmod +x /root/config.sh && /root/config.sh \
   && chmod +x /root/start.sh \
