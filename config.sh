@@ -1,5 +1,7 @@
 #!/bin/sh
 
+PHP_INI="/usr/local/php/etc/php.ini"
+N_CONF="/usr/local/nginx/conf/nginx.conf"
 #wget -O appbus.zip https://raw.githubusercontent.com/datagnss/appbus/master/raw/appbus.zip 
 #unzip appbus.zip -d /data/wwwroot/default
 
@@ -20,10 +22,13 @@ chmod -R 0755 /data/wwwroot/default/upload
 
 # delete exec in the line which contain disable_functions
 echo "config php options(remove exec security, modify upload fileszie)"
-sed -n '/disable_functions/p' /usr/local/php/etc/php.ini | sed 's/,exec//g' 
-sed -n '/upload_max_filesize/p' /usr/local/php/etc/php.ini | sed 's/50/128/g'
-sed -n '/post_max_size/p' /usr/local/php/etc/php.ini | sed 's/100/128/g'
-#sed -i '$a upload_max_filesize = 128m' /usr/local/php/etc/php.ini
-#sed -i '$a post_max_size = 128m' /usr/local/php/etc/php.ini
+sed -n '/disable_functions/p' ${PHP_INI} | sed 's/,exec//g' 
+sed -n '/upload_max_filesize/p' ${PHP_INI} | sed 's/50/128/g'
+sed -n '/post_max_size/p' ${PHP_INI} | sed 's/100/128/g'
+#sed -i '$a upload_max_filesize = 128m' ${PHP_INI}
+#sed -i '$a post_max_size = 128m' ${PHP_INI}
+
+echo "config nginx.conf"
+sed -n '/server_name _;/p' ${N_CONF} | sed 's/_/localhost/g'
 
 echo "appbus configure finished."
