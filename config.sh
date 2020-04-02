@@ -20,7 +20,7 @@ chmod -R 0755 /data/wwwroot/default/upload
 
 # delete exec in the line which contain disable_functions
 echo "config php options(remove exec security, modify upload fileszie)"
-sed -n '/disable_functions/p' ${PHP_INI} | sed -i 's/,exec//g'  ${PHP_INI}
+sed -n '/disable_functions/p' ${PHP_INI} | sed -i 's/,exec,/,/g'  ${PHP_INI}
 sed -n '/upload_max_filesize/p' ${PHP_INI} | sed -i 's/50/128/g'  ${PHP_INI}
 sed -n '/post_max_size/p' ${PHP_INI} | sed -i 's/100/128/g' ${PHP_INI}
 #sed -i '$a upload_max_filesize = 128m' ${PHP_INI}
