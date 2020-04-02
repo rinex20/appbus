@@ -12,6 +12,8 @@ chmod 0755 /usr/bin/aapt
 
 chown -R www:www /usr/local/nginx
 
+mkdir -p /data/wwwroot/default/upload 
+
 chown -R www:www /data/wwwroot/default
 chown -R www:www /data/wwwroot/default/upload 
 
