@@ -12,12 +12,12 @@ RUN set -ex \
   && mkdir -p /data/wwwroot/default \
   && chmod +x /root/oneinstack.sh && /root/oneinstack.sh \  
   && chmod +x /root/config.sh && /root/config.sh \
-  && chmod +x /root/start.sh \
+  && cp /root/start.sh /usr/local/bin/ && chmod +x /usr/local/bin/start.sh \
   && rm -rf /root/*
 
 # 环境变量
 ENV PATH $PATH:/usr/local/php/bin:/usr/local/php/sbin:/usr/local/nginx/sbin
 EXPOSE 80
 VOLUME ["/data/wwwroot/default"]
-#ENTRYPOINT ["/root/start.sh"]
-CMD ["/root/start.sh"]
+#ENTRYPOINT ["/usr/local/bin/start.sh"]
+CMD ["/usr/local/bin/start.sh"]
