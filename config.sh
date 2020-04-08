@@ -29,6 +29,6 @@ sed -n '/post_max_size/p' ${PHP_INI} | sed -i 's/100/128/g' ${PHP_INI}
 #sed -i '$a post_max_size = 128m' ${PHP_INI}
 
 #echo "config nginx.conf"
-sed -n '/server_name _;/p' ${N_CONF} | sed -i 's/_/localhost/g'  ${N_CONF}
+sed -n '/server_name/p' ${N_CONF} | sed -i 's/server_name _/server_name localhost/g'  ${N_CONF}
 
 echo "appbus configure finished."
