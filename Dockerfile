@@ -18,6 +18,6 @@ RUN set -ex \
 # 环境变量
 ENV PATH $PATH:/usr/local/php/bin:/usr/local/php/sbin:/usr/local/nginx/sbin
 EXPOSE 80
-VOLUME ["/data/wwwroot"]
+VOLUME ["/data/wwwroot","/usr/local/nginx/conf/nginx.conf","/usr/local/php/etc/php.ini"]
 #ENTRYPOINT ["/usr/local/bin/start.sh"]
 CMD ["/usr/local/bin/start.sh"]
