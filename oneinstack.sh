@@ -3,10 +3,10 @@
 # Download binary file
 ONE_FILE="oneinstack-full.tar.gz"
 WWWROOT="/data/wwwroot/default"
+URL_FILE0="http://mirrors.linuxeye.com"
 URL_FILE="http://app.datagnss.com:8081/download"
 
 echo "downloading oneinstack..."
-# wget -O /root/${ONE_FILE} http://mirrors.linuxeye.com/${ONE_FILE} > /dev/null 2>&1  
 wget -O /root/${ONE_FILE} ${URL_FILE}/${ONE_FILE} > /dev/null 2>&1  
 if [ $? -ne 0 ]; then
     echo "Error: Failed to download file: ${ONE_FILE}" && exit 1
